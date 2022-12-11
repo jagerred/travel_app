@@ -1,0 +1,20 @@
+.locals-choice {
+	padding-bottom: toRem(44);
+	&__title {
+		font-size: toRem(30);
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-rows: minmax(toRem(232), auto);
+		gap: 31px;
+	}
+	@include tablet {
+		&__list {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		&__title {
+			font-size: 4vw;
+		}
+	}
+}

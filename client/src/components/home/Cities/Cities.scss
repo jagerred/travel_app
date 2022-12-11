@@ -1,0 +1,102 @@
+.cities {
+	margin-top: toRem(30);
+	&__title {
+		font-size: 30px;
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-rows: minmax(auto, toRem(290));
+		gap: 18px;
+	}
+	&__item {
+		background-color: var(--color-gray);
+		overflow: hidden;
+		position: relative;
+		border-radius: 20px;
+		transition: all 0.6s ease;
+		&:hover {
+			transform: translateY(-10px);
+		}
+	}
+	&__link {
+		display: block;
+		min-width: 100%;
+		height: 100%;
+	}
+	&__button {
+		position: absolute;
+		top: toRem(12);
+		right: toRem(12);
+	}
+	&__text {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		color: white;
+		padding-left: toRem(28);
+		padding-bottom: toRem(28);
+		display: flex;
+		flex-direction: column;
+		z-index: 22;
+		&:not(:last-child) {
+			margin-bottom: toRem(6);
+		}
+	}
+	&__name {
+		font-size: toRem(24);
+		font-weight: 500;
+	}
+	&__count {
+		font-size: toRem(12);
+		font-weight: 400;
+	}
+	&__skeleton {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		width: 100%;
+		height: 100%;
+		background-color: var(--color-gray);
+		padding: toRem(32) toRem(28);
+		border-radius: toRem(20);
+	}
+	&__icon {
+		width: toRem(32);
+		height: toRem(32);
+		color: var(--color-gray);
+		&:hover {
+			color: var(--color-red);
+		}
+	}
+	@include laptop {
+		&__list {
+			grid-template-columns: repeat(2, 1fr);
+			grid-auto-rows: minmax(auto, toRem(230));
+		}
+	}
+	@include tablet {
+		&__title {
+			font-size: 4vw;
+		}
+		&__text {
+			padding-left: toRem(18);
+			padding-bottom: toRem(18);
+		}
+	}
+	@include mobile {
+		&__list {
+			//grid-template-columns: 1fr ;
+			grid-auto-rows: minmax(auto, toRem(160));
+		}
+		&__like {
+		}
+	}
+}
+.like {
+	fill: rgb(131, 131, 131);
+	&:hover {
+		fill: #ed7c7c;
+	}
+}

@@ -1,0 +1,135 @@
+.place-card {
+	&__item {
+		position: relative;
+		border-radius: 10px;
+		box-shadow: 0.5px 0.5px 5px rgb(183, 183, 183);
+
+		overflow: hidden;
+		transition: all 0.5s ease;
+		&--dark {
+			background-color: var(--color-card-dark);
+			box-shadow: none;
+		}
+		&:hover {
+			transform: translateY(-10px);
+		}
+	}
+	&__link {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		min-width: 100%;
+	}
+	&__img {
+		background-color: var(--color-gray);
+		overflow: hidden;
+		min-height: toRem(100);
+		max-height: toRem(156);
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: toRem(12) toRem(16) toRem(15) toRem(19);
+		flex-grow: 1;
+		gap: toRem(4);
+	}
+	&__text {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		gap: toRem(6);
+	}
+	&__name {
+		display: inline-block;
+		font-size: toRem(20);
+		font-weight: 500;
+		margin-bottom: toRem(4);
+	}
+	&__place {
+		display: inline-block;
+		position: relative;
+		font-size: toRem(14);
+		color: var(--color-gray);
+		margin-left: toRem(15);
+	}
+	&__icon {
+		&--geo {
+			position: absolute;
+			left: toRem(-17);
+			top: 0;
+		}
+		//&--stats {
+		//	position: absolute;
+		//	left: toRem(-16);
+		//	top: toRem(3);
+		//}
+	}
+	&__stats {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: end;
+		width: 20%;
+		padding-left: toRem(14);
+		font-size: toRem(14);
+		gap: toRem(2);
+	}
+	&__stats-item {
+		display: flex;
+		gap: toRem(4);
+		align-items: center;
+	}
+	&__like-button {
+		position: absolute;
+		top: 3%;
+		right: 3%;
+	}
+	&__like-icon {
+		width: 76%;
+		height: 76%;
+		color: var(--color-gray);
+		&--liked {
+			color: rgb(247, 93, 93);
+		}
+		&:hover {
+			color: rgb(247, 93, 93);
+		}
+	}
+	&__skeleton {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		min-width: 100%;
+		border-radius: 10px;
+		box-shadow: 0.5px 0.5px 5px rgb(183, 183, 183);
+		background-color: white;
+	}
+	&__skeleton-text {
+		max-width: 80%;
+		padding: toRem(14) toRem(16) toRem(15) toRem(19);
+		flex-grow: 1;
+	}
+	@include tablet {
+		&__name {
+			font-size: 3.2vw;
+		}
+		&__place,
+		&__likes-count,
+		&__rating {
+			font-size: 2.4vw;
+		}
+	}
+	@include mobile {
+		&__img {
+			height: toRem(120);
+		}
+		&__icon {
+			&--stats {
+				position: absolute;
+				left: toRem(-16);
+				top: 0;
+			}
+		}
+	}
+}

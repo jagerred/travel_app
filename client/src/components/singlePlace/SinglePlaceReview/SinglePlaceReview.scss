@@ -1,0 +1,89 @@
+.single-place-review {
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: minmax(toRem(100), auto);
+		gap: toRem(36);
+		margin-top: toRem(24);
+	}
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	&__container {
+		padding: toRem(14) toRem(20);
+		border-radius: 10px;
+		background-color: var(--color-light-blue);
+		&--dark {
+			background-color: var(--color-card-dark);
+		}
+		&--user {
+			margin-bottom: toRem(16);
+			flex-grow: 1;
+		}
+	}
+	&__user {
+		display: flex;
+		gap: toRem(12);
+		align-items: center;
+		margin-bottom: toRem(10);
+	}
+	&__photo {
+		width: toRem(58);
+		height: toRem(58);
+		background-color: var(--color-gray);
+		border-radius: 50px;
+		overflow: hidden;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(2);
+	}
+	&__name {
+		font-size: toRem(20);
+	}
+	&__review {
+		display: inline-block;
+		padding-left: toRem(70);
+	}
+	&__more {
+		color: var(--primary-color);
+		font-size: toRem(14);
+		font-weight: 500;
+		margin-top: toRem(4);
+		padding-left: toRem(70);
+		cursor: pointer;
+	}
+	&__button {
+		display: inline-block;
+		align-self: center;
+		padding: toRem(12) toRem(20);
+		margin-bottom: toRem(10);
+		font-size: toRem(16);
+		background: transparent;
+		color: inherit;
+		border: 1px solid var(--primary-color);
+		border-radius: 10px;
+
+		cursor: pointer;
+		&:hover {
+			background-color: var(--primary-color);
+			color: white;
+		}
+	}
+	&__title {
+		align-self: flex-start;
+	}
+	&__error {
+		color: var(--color-red);
+	}
+	@include tablet {
+		&__list {
+			grid-template-columns: 1fr;
+			grid-auto-rows: minmax(toRem(100), auto);
+			gap: toRem(20);
+			margin-top: toRem(24);
+		}
+	}
+}

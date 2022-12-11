@@ -1,0 +1,12 @@
+.main-title{
+    max-width: 80%;
+    margin: 16px auto 16px;
+    padding: 0;
+    font-weight: 500;
+    font-size: 46px;
+    text-align: center;
+    @include tablet{
+        font-size: 6vw;
+        margin-bottom: 16px;
+    }
+}

@@ -1,0 +1,114 @@
+* {
+	box-sizing: border-box;
+	font-family: 'TTFirsNeue';
+	margin: 0;
+	padding: 0;
+}
+body {
+	overflow-x: hidden;
+}
+.wrapper {
+	background-color: #fbfbfb;
+	min-height: 100vh;
+	min-width: 100vw;
+	padding-bottom: 10px;
+}
+.container {
+	background-color: inherit;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 12px;
+}
+.text {
+	font-weight: 700;
+}
+.title-30 {
+	margin-top: 0;
+	margin-bottom: 20px;
+	padding: 0;
+}
+.button {
+	outline: none;
+	border-radius: 10px;
+	cursor: pointer;
+	user-select: none;
+	transition: all 0.3s ease;
+	&:active {
+		opacity: 0.8;
+	}
+	&:focus-visible {
+		outline: 3px solid red;
+	}
+	&:disabled {
+		background-color: var(--color-darkgray);
+		pointer-events: none;
+		cursor: default;
+	}
+	&--like {
+		padding-top: 6px;
+		border: none;
+		border-radius: 50px;
+		width: 50px;
+		height: 50px;
+	}
+}
+.icon {
+	&--like {
+		color: red;
+	}
+}
+.input {
+	border: none;
+}
+.image {
+	width: 100%;
+	min-height: 100%;
+	object-fit: cover;
+	vertical-align: baseline;
+	line-height: 0;
+	pointer-events: none;
+	transition: all 0.5s ease;
+}
+.dark-bg {
+	filter: brightness(86%);
+}
+.list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.link {
+	text-decoration: none;
+	color: inherit;
+	&:focus-visible {
+		outline: 3px solid red;
+	}
+}
+
+.dark-theme {
+	color: white;
+	background-color: rgb(26, 26, 26);
+}
+.dark-card {
+	background-color: var(--color-card-dark);
+	box-shadow: none;
+	border: none;
+	color: white;
+}
+.dark-icon {
+	color: white;
+}
+.hidden {
+	display: none;
+}
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+	clip: rect(0 0 0 0);
+	transition: all 1s ease;
+}

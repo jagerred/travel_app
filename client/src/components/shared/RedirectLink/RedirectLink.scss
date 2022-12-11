@@ -1,0 +1,24 @@
+.redirect-main {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(18);
+		align-items: center;
+		color: inherit;
+		padding: toRem(20) 0;
+	}
+	&__title {
+		font-size: toRem(16);
+	}
+	&__link {
+		border: 1.6px solid var(--primary-color);
+		border-radius: 10px;
+		font-size: toRem(18);
+		font-weight: 500;
+		padding: toRem(12) toRem(16);
+		&:hover {
+			color: white;
+			background-color: var(--primary-color);
+		}
+	}
+}

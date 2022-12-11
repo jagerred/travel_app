@@ -1,0 +1,139 @@
+.single-place-info {
+	&__container {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	&__items {
+		display: grid;
+		grid-template-columns: toRem(24) 60%;
+		gap: toRem(18);
+		width: 48%;
+		background-color: var(--color-light-blue);
+		padding: toRem(30);
+		border-radius: 20px;
+		align-content: start;
+	}
+	&__contact {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+	&__title {
+		font-size: toRem(16);
+		font-weight: 500;
+		margin-bottom: toRem(4);
+	}
+	&__phone-list {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+	&__phone-item {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+	}
+	&__phone-name {
+		font-size: toRem(14);
+		color: var(--color-darkgray);
+	}
+	&__phone-number {
+	}
+	&__work-time {
+		display: flex;
+		flex-direction: column;
+
+		position: relative;
+		font-size: toRem(16);
+	}
+	&__work-status {
+		color: rgb(0, 175, 0);
+		&--closed {
+			color: var(--color-red);
+		}
+	}
+	&__no-time {
+		color: var(--color-gray);
+	}
+	&__more-button {
+		display: flex;
+		align-items: center;
+		border: none;
+		color: inherit;
+		background-color: transparent;
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	&__link {
+		display: inline-block;
+		&--social {
+			padding: toRem(10) toRem(10) toRem(6) toRem(10);
+		}
+	}
+	&__site {
+		display: inline-block;
+	}
+	&__social-list {
+		display: flex;
+		gap: toRem(10);
+		grid-column: 1/3;
+	}
+	&__social-item {
+		background-color: rgb(255, 255, 255);
+		border-radius: 50px;
+		color: var(--primary-color);
+		&:hover {
+			color: white;
+			background-color: var(--primary-color);
+		}
+	}
+	&__icon {
+		color: var(--primary-color);
+		width: toRem(24);
+		height: toRem(24);
+		justify-self: flex-start;
+	}
+	&__social-icon {
+		color: inherit;
+		width: toRem(16);
+		height: toRem(16);
+	}
+	&__schedule-list {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(6);
+		grid-column: 2/3;
+	}
+	&__schedule-item {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__schedule-text {
+	}
+	&__map {
+		display: flex;
+		width: 48%;
+		border-radius: 20px;
+		line-height: 0;
+		overflow: hidden;
+	}
+
+	@include tablet {
+		&__items {
+			width: 100%;
+			margin-bottom: toRem(20);
+		}
+		&__map {
+			width: 100%;
+			min-height: toRem(300);
+		}
+	}
+}
+#map-container {
+	width: 100%;
+	height: 100%;
+}

@@ -1,0 +1,75 @@
+.review-form {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+
+		padding: toRem(16);
+		width: 60%;
+		min-height: toRem(280);
+		border-radius: 20px;
+
+		&--dark {
+			background-color: var(--color-card-dark);
+		}
+	}
+	&__user {
+		display: flex;
+		gap: toRem(12);
+		align-items: center;
+		margin-bottom: toRem(10);
+	}
+	&__photo {
+		width: toRem(58);
+		height: toRem(58);
+		background-color: var(--color-gray);
+		border-radius: 50px;
+		overflow: hidden;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(2);
+	}
+	&__name {
+		font-size: toRem(20);
+	}
+	&__review {
+		display: inline-block;
+		margin-left: toRem(70);
+		padding: toRem(12) toRem(16);
+
+		margin-bottom: toRem(10);
+
+		flex-grow: 1;
+		resize: none;
+		border-radius: 10px;
+		background-color: inherit;
+		color: inherit;
+		&:focus {
+			border-color: var(--primary-color);
+		}
+	}
+	&__button {
+		align-self: center;
+		color: white;
+		background-color: var(--primary-color);
+		border: none;
+		padding: toRem(6) toRem(10);
+	}
+	&__error {
+		color: var(--color-red);
+		align-self: center;
+		margin-bottom: toRem(10);
+	}
+	@include tablet {
+		&__container {
+			padding: 0 toRem(10);
+			width: 100%;
+		}
+		&__button {
+			width: 50%;
+			height: toRem(40);
+		}
+	}
+}

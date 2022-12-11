@@ -1,0 +1,37 @@
+.error-popup {
+	position: fixed;
+	bottom: toRem(30);
+	right: toRem(30);
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: toRem(4);
+		position: relative;
+		padding: toRem(10) toRem(30) toRem(24);
+		border-radius: 10px;
+		background-color: inherit;
+		color: inherit;
+		box-shadow: 0.5px 0.5px 5px rgb(183, 183, 183);
+	}
+	&__title {
+		font-weight: 700;
+		font-size: toRem(18);
+	}
+	&__message {
+		color: inherit;
+	}
+	&__icon {
+		color: var(--color-red);
+		width: toRem(30);
+		height: toRem(30);
+	}
+	&__close-button {
+		position: absolute;
+		top: toRem(14);
+		right: toRem(14);
+		border: none;
+		background: transparent;
+		color: inherit;
+	}
+}

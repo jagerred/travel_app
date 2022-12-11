@@ -1,0 +1,36 @@
+.places-filter {
+	display: flex;
+	margin-bottom: 10px;
+	&__filters {
+		min-width: 26%;
+		margin-right: 3%;
+	}
+	&__title {
+		display: inline-block;
+		font-size: 18px;
+		font-weight: 500;
+		&--filter {
+			margin-bottom: 18px;
+		}
+	}
+}
+@include tablet {
+	.places-filter {
+		&__title {
+			font-size: 4vw;
+		}
+		&__filters {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100vw;
+			height: 100vh;
+			z-index: 100;
+			background-color: white;
+			padding: 30px;
+			transform: translateX(-100%);
+			overflow-y: scroll;
+			margin-right: 0;
+		}
+	}
+}

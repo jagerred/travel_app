@@ -1,0 +1,29 @@
+@import '/src/sass/functions';
+@import '/src/sass/fonts';
+@import '/src/sass/vars';
+@import '/src/sass/mixins';
+
+@import '/src/pages/MainPage/MainPage';
+@import '/src/components/shared/Header/Header';
+@import 'src/components/home/Cities/Cities';
+@import '/src/components/shared/Search/Search';
+@import '/src/components/placeFilters/PlaceCategories/PlaceCategories';
+@import '/src/components/placeFilters/LocalsChoice/LocalsChoice';
+@import '/src/pages/CityPage/CityPage.scss';
+@import '/src/components/placeFilters/PlaceCard/PlaceCard';
+@import '/src/components/user/UserModal/UserModal';
+@import '/src/pages/ProfilePage/ProfilePage';
+@import '/src/components/profile/ProfileMain/ProfileMain';
+@import '/src/components/profile/ProfileCards/ProfileCards';
+@import '/src/components/profile/ProfileCities/ProfileCities';
+@import '/src/components/singlePlace/SinglePlaceOverview/SinglePlaceOverview';
+@import '/src/components/singlePlace/SinglePlaceReview/SinglePlaceReview';
+@import '/src/components/singlePlace/ReviewForm/ReviewForm';
+@import '/src/components/singlePlace/SinglePlaceInfo/SinglePlaceInfo';
+@import '/src/components/shared/NavTabs/NavTabs';
+@import '/src/components/shared/RedirectLink/RedirectLink';
+@import '/src/components/shared/LazyLoader/LazyLoader';
+
+@import '/src/components/shared/ErrorPopup/ErrorPopup';
+@import '/src/components/placeFilters/Filters/Filters.scss';
+@import '/src/components/placeFilters/FilterResult/FilterResult';

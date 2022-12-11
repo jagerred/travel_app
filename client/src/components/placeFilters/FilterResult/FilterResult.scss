@@ -1,0 +1,99 @@
+.filter-result {
+	display: flex;
+	flex-direction: column;
+	min-width: 71%;
+	min-height: toRem(300);
+
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: toRem(18);
+	}
+	&__sort {
+		display: inline-block;
+		font-size: toRem(11);
+		font-weight: 500;
+		color: var(--color-gray);
+	}
+	&__select {
+		margin-left: toRem(5);
+		font-size: inherit;
+		font-weight: inherit;
+		border: none;
+		background: white;
+		border-radius: 10px;
+		&:active {
+			border: none;
+		}
+	}
+	&__option {
+		font-weight: inherit;
+		border-radius: 20px;
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: minmax(toRem(232), auto);
+		gap: toRem(20);
+		margin-bottom: toRem(30);
+		flex-shrink: 1;
+	}
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		margin-top: auto;
+	}
+	&__buttons-container {
+		display: flex;
+		gap: toRem(5);
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__button {
+		color: inherit;
+		min-width: toRem(36);
+		min-height: toRem(36);
+		padding-top: toRem(5);
+		background: none;
+		border: solid 1px var(--color-gray);
+		border-radius: 10px;
+		&:hover {
+			background-color: var(--primary-color);
+			border: none;
+			color: white;
+		}
+		&--active {
+			background-color: var(--primary-color);
+			border: none;
+			color: white;
+		}
+		&--number {
+			padding-top: 0;
+			border: none;
+		}
+		&--filter {
+			display: none;
+			max-height: toRem(32);
+		}
+	}
+	@include tablet {
+		width: 100%;
+
+		&__sort {
+			font-size: 2.6vw;
+		}
+		&__info {
+			flex-direction: column;
+		}
+		&__button {
+			&--filter {
+				display: inline-block;
+			}
+		}
+	}
+	@include mobile {
+		&__list {
+			grid-auto-rows: minmax(toRem(180), auto);
+		}
+	}
+}
