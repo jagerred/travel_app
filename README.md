@@ -20,7 +20,7 @@ ___
 cd client
 npm start 
 ```
-Только сервера: 
+Только сервер: 
 ```
 cd client
 npm run dev 
