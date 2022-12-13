@@ -35,3 +35,8 @@ npm test
 __Клиент:__ React · Redux Toolkit · Redux Persist · React Router · React Hook Form · Firebase Auth · Framer Motion · Material UI · Axios · SASS 
 
 __Сервер:__ Node JS · Express JS · MongoDB · Multer  
+
+##В планах добавить:
+* новые разделы на главную страницу и страницу города (с использованием табов)
+* индикацию иконками категорий и подкатегорий 
+* раздел "Мои отзывы в профиле пользователя"
