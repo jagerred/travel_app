@@ -4,7 +4,6 @@ import { Link, useParams } from 'react-router-dom';
 import { v4 } from 'uuid';
 import {
 	fetchCityInfo,
-	updateMain,
 	searchRequest,
 	updateFilter,
 } from 'redux/slices/searchSlice';
@@ -63,9 +62,9 @@ const Search = ({ isMain, searchPlaceholder }) => {
 			? null
 			: searchResult.map(i => {
 					return (
-						<li key={i.id} className='search__result-item'>
+						<li key={v4()} className='search__result-item'>
 							<Link
-								to={isMain ? `/${i._id}/places` : `${i.id}`}
+								to={isMain ? `/${i._id}/places` : `${i.id}/info`}
 								className='link search__link'
 								onClick={() => setValue('')}
 							></Link>
@@ -84,10 +83,12 @@ const Search = ({ isMain, searchPlaceholder }) => {
 		}
 		dispatch(updateFilter(value));
 	};
+
 	const cityImage = isMain
 		? 'https://s1.1zoom.ru/big3/804/Russia_Moscow_Rivers_478099.jpg'
 		: cityInfo.photos;
 	const cityName = isMain ? '' : cityInfo.name;
+
 	return (
 		<>
 			<section className='search'>
@@ -114,7 +115,11 @@ const Search = ({ isMain, searchPlaceholder }) => {
 							className='button search__button'
 							onClick={e => addSearchFilter(e)}
 						>
-							<img className='search__icon' src={searchIcon} />
+							<img
+								className='search__icon'
+								alt='search icon'
+								src={searchIcon}
+							/>
 						</button>
 
 						{opened ? (

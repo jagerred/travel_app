@@ -9,12 +9,7 @@ const ProfilePage = () => {
 		<>
 			<div className='profile-page'>
 				<ProfileMain />
-				<NavTabs
-					tabs={[
-						{ name: 'Мои города', path: 'cities' },
-						{ name: 'Отзывы', path: '#' },
-					]}
-				/>
+				<NavTabs tabs={[{ name: 'Мои города', path: 'cities' }]} />
 				<Outlet />
 			</div>
 		</>

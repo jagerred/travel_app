@@ -13,10 +13,8 @@ router.post('/:cityId/addplace', async (req, res) => {
 		{ $push: { places: req.body } },
 		(err, post) => {
 			if (err) {
-				console.log(err);
 				res.end();
 			} else {
-				console.log(post);
 				res.end();
 			}
 		}
@@ -32,8 +30,7 @@ router.get('/:id/place/:search', async (req, res) => {
 		);
 		res.json(filteredData);
 	} catch (error) {
-		console.log(error);
-		res.status(500).json(error);
+		res.json(error);
 	}
 });
 router.get('/:search', async (req, res) => {
@@ -152,10 +149,8 @@ router.post('/:cityId/:placeId/reviews', async (req, res) => {
 		{ $push: { 'places.$.reviews': req.body } },
 		(err, post) => {
 			if (err) {
-				console.log(err);
 				res.end();
 			} else {
-				console.log(post);
 				res.end();
 			}
 		}
@@ -167,10 +162,8 @@ router.put('/:cityId/:placeId/likes', async (req, res) => {
 		{ $set: { 'places.$.likes': req.body.likes } },
 		(err, post) => {
 			if (err) {
-				console.log(err);
 				res.end();
 			} else {
-				console.log(post);
 				res.end();
 			}
 		}
@@ -182,21 +175,12 @@ router.put('/:cityId/:placeId/rating', async (req, res) => {
 		{ $set: { 'places.$.rating': req.body.rating } },
 		(err, post) => {
 			if (err) {
-				console.log(err);
 				res.end();
 			} else {
-				console.log(post);
 				res.end();
 			}
 		}
 	);
 });
-//router.post('/', async (req, res) => {
-//	const data = new Data({
-//		title: req.body.title,
-//	});
-//	const savedData = data.save();
-//	res.json(savedData);
-//});
 
 export default router;

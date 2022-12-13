@@ -69,7 +69,7 @@ const PlaceCard = ({
 				</button>
 				<Link to={`${placeId}/info`} className='link place-card__link'>
 					<div className='place-card__img'>
-						<img src={photos} alt='Kazan' className='image' />
+						<img src={photos} alt={name} className='image' />
 					</div>
 					<div className='place-card__info'>
 						<span className='place-card__name'>

@@ -17,7 +17,6 @@ export const fetchSubcategories = createAsyncThunk(
 export const fetchAllSubcategories = createAsyncThunk(
 	'subcategories/fetchAllSubcategories',
 	async categories => {
-		console.log(categories);
 		const response = await axios.get(
 			`http://localhost:3001/filters/subcategoriesAll?${categories}`
 		);

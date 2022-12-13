@@ -4,13 +4,7 @@ import { MdLocationPin } from 'react-icons/md';
 import { MdClose } from 'react-icons/md';
 import { MdDelete } from 'react-icons/md';
 import { Reorder } from 'framer-motion';
-import {
-	deletePlace,
-	removePlace,
-	postPlace,
-	removeVisitedPlace,
-	setVisitedPlace,
-} from 'redux/slices/userSlice';
+import { deletePlace, postPlace } from 'redux/slices/userSlice';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -63,7 +57,6 @@ const ProfileCard = ({ item, visited }) => {
 				placeObj: item,
 			})
 		);
-		//dispatch(setVisitedPlace({ cityId, place: item }));
 
 		dispatch(
 			postPlace({
@@ -86,7 +79,6 @@ const ProfileCard = ({ item, visited }) => {
 				placeObj: item,
 			})
 		);
-		//dispatch(removeVisitedPlace({ cityId, place: item }));
 
 		dispatch(
 			postPlace({
@@ -97,7 +89,9 @@ const ProfileCard = ({ item, visited }) => {
 			})
 		);
 	};
+
 	let drag = false;
+
 	return (
 		<>
 			<Reorder.Item
@@ -125,7 +119,7 @@ const ProfileCard = ({ item, visited }) => {
 					}}
 				/>
 				<div className='profile-cards__img'>
-					<img src={item.photos} alt='' className='image' />
+					<img src={item.photos} alt={item.name} className='image' />
 				</div>
 				<div className='profile-cards__text'>
 					<span className='profile-cards__name'>

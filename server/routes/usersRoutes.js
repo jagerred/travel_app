@@ -21,10 +21,8 @@ router.post('/uploadImage', fileMiddleware.single('avatar'), (req, res) => {
 		{ new: true },
 		(err, post) => {
 			if (err) {
-				console.log(err);
 				res.end();
 			} else {
-				console.log(post);
 				res.end();
 			}
 		}
@@ -40,10 +38,8 @@ router.post('/:userId/:cityId/places', async (req, res) => {
 		{ returnDocument: 'after' },
 		(err, post) => {
 			if (err) {
-				console.log(err);
 				res.end();
 			} else {
-				console.log(post);
 				res.end();
 			}
 		}
@@ -91,10 +87,8 @@ router.post('/:userId/:cityId/visited', async (req, res) => {
 		{ new: true },
 		(err, post) => {
 			if (err) {
-				console.log(err);
 				res.end();
 			} else {
-				console.log(post);
 				res.end();
 			}
 		}
@@ -120,7 +114,6 @@ router.post('/:userId', async (req, res) => {
 		{ new: true },
 		(err, post) => {
 			if (err) {
-				console.log(err);
 				res.end();
 			} else {
 				res.end();

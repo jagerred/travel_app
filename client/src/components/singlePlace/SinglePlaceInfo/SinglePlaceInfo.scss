@@ -107,6 +107,7 @@
 		flex-direction: column;
 		gap: toRem(6);
 		grid-column: 2/3;
+		font-size: toRem(13);
 	}
 	&__schedule-item {
 		display: flex;
@@ -120,6 +121,7 @@
 		border-radius: 20px;
 		line-height: 0;
 		overflow: hidden;
+		min-height: toRem(300);
 	}
 
 	@include tablet {
@@ -129,7 +131,9 @@
 		}
 		&__map {
 			width: 100%;
-			min-height: toRem(300);
+		}
+		&__schedule-list {
+			font-size: toRem(16);
 		}
 	}
 }

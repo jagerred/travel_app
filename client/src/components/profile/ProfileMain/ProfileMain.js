@@ -58,10 +58,6 @@ const ProfileMain = () => {
 								{declarationOfNumber(totalPlaces, ['место', 'места', 'мест'])}
 							</span>
 						</li>
-						<li className='profile-stats__item'>
-							<span className='profile-stats__count'>15</span>
-							<span className='profile-stats__name'>Отзывов</span>
-						</li>
 					</ul>
 					<input
 						className='visually-hidden'

@@ -23,7 +23,7 @@
 	&__img {
 		background-color: var(--color-gray);
 		overflow: hidden;
-		min-height: toRem(100);
+		min-height: toRem(140);
 		max-height: toRem(156);
 	}
 	&__info {
@@ -59,11 +59,6 @@
 			left: toRem(-17);
 			top: 0;
 		}
-		//&--stats {
-		//	position: absolute;
-		//	left: toRem(-16);
-		//	top: toRem(3);
-		//}
 	}
 	&__stats {
 		display: flex;
@@ -72,6 +67,7 @@
 		justify-content: end;
 		width: 20%;
 		padding-left: toRem(14);
+		padding-right: toRem(2);
 		font-size: toRem(14);
 		gap: toRem(2);
 	}
@@ -119,17 +115,18 @@
 		&__rating {
 			font-size: 2.4vw;
 		}
+		&__img {
+			min-height: toRem(100);
+		}
+		&__stats {
+			width: 26%;
+			font-size: 2.4vw;
+			gap: toRem(2);
+		}
 	}
 	@include mobile {
 		&__img {
 			height: toRem(120);
-		}
-		&__icon {
-			&--stats {
-				position: absolute;
-				left: toRem(-16);
-				top: 0;
-			}
 		}
 	}
 }
