@@ -6,6 +6,23 @@ import { findByObjKey } from '../utils/findByObjKey.js';
 const router = Router();
 router.use(express.json());
 
+///---Добавить место в город
+router.post('/:cityId/addplace', async (req, res) => {
+	Data.findOneAndUpdate(
+		{ _id: req.params.cityId },
+		{ $push: { places: req.body } },
+		(err, post) => {
+			if (err) {
+				console.log(err);
+				res.end();
+			} else {
+				console.log(post);
+				res.end();
+			}
+		}
+	);
+});
+
 //---Поиск места
 router.get('/:id/place/:search', async (req, res) => {
 	try {
@@ -80,13 +97,16 @@ router.get('/:id/places', async (req, res) => {
 	}
 
 	if (filters?.subcategory) {
+		const categWithSub = [];
 		filters.subcategory.forEach(sub => {
 			const categoryName = sub.slice(0, 3);
 			if (filters.category.includes(categoryName)) {
 				withSubcat.subcategory.push(sub);
-				filters.category = filters.category.filter(i => i !== categoryName);
+				if (!categWithSub.includes(categoryName))
+					categWithSub.push(categoryName);
 			}
 		});
+		filters.category = filters.category.filter(i => !categWithSub.includes(i));
 	}
 
 	const noSub = {

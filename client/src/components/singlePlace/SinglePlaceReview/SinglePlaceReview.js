@@ -1,5 +1,6 @@
 import { Rating } from '@mui/material';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import { FaUserCircle } from 'react-icons/fa';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectDarkTheme } from 'redux/selectors/globalSelectors';
@@ -18,6 +19,7 @@ const SinglePlaceReview = ({ name, rating, text, photo, isUserReview }) => {
 				<div className='single-place-review__user'>
 					<div className='single-place-review__photo'>
 						<img src={`/${photo}`} alt='' className='image' />
+						<FaUserCircle className='header__profile-icon' />
 					</div>
 					<div className='single-place-review__info'>
 						<span className='place-review__name'>{name}</span>

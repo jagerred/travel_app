@@ -36,7 +36,9 @@ const ReviewForm = ({ toggleMyReview }) => {
 
 	const onSubmit = data => {
 		const rating = averageRating(+data.rating);
-		dispatch(postReview({ cityId, placeId, review: { uid, name, ...data } }));
+		dispatch(
+			postReview({ cityId, placeId, review: { uid, name, photo, ...data } })
+		);
 		dispatch(addReview({ uid, name, photo, ...data }));
 		dispatch(
 			putRating({

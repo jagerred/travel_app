@@ -112,7 +112,7 @@ const SubcategoryFilter = () => {
 						size='small'
 						onChange={() => dispatch(toggleSwitch('highRating'))}
 					/>
-					<span className='filters__switch-name'>Оценка 8+</span>
+					<span className='filters__switch-name'>Рейтинг 4+</span>
 				</li>
 				<li className='filters__additional-filter'>
 					<Switch

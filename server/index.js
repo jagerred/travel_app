@@ -13,11 +13,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const PORT = 3001;
-const DB_URL =
-	'mongodb+srv://user:user@cluster0.jxib7cg.mongodb.net/?retryWrites=true&w=majority';
 const app = express();
 
 app.use(cors());
+app.use(express.static(path.join(__dirname, '../client/build')));
 app.use('/', cityRoutes);
 app.use('/filters', filtersRoutes);
 app.use('/users', usersRoutes);
