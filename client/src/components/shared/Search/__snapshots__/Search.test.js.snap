@@ -37,6 +37,7 @@ Object {
               class="button search__button"
             >
               <img
+                alt="search icon"
                 class="search__icon"
                 src="search.svg"
               />
@@ -79,6 +80,7 @@ Object {
             class="button search__button"
           >
             <img
+              alt="search icon"
               class="search__icon"
               src="search.svg"
             />
