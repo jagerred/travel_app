@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+
 const initialState = {
 	userInfo: {
 		name: '',
@@ -14,8 +15,12 @@ const initialState = {
 };
 export const addUser = createAsyncThunk(
 	'user/addUser',
-	async function (data, { dispatch, rejectWithValue, getState }) {
-		const response = await axios.post('http://localhost:3001/users', data);
+	async function (data, { dispatch }) {
+		try {
+			const response = await axios.post('http://localhost:3001/users', data);
+		} catch (error) {
+			dispatch(toggleServerError());
+		}
 	}
 );
 export const postCity = createAsyncThunk(
@@ -36,10 +41,6 @@ export const postCity = createAsyncThunk(
 				`http://localhost:3001/users/${uid}`,
 				city
 			);
-
-			if (!response.status === 200) {
-				throw new Error('Server Error!');
-			}
 			dispatch(addCity(city));
 		} catch (error) {
 			return rejectWithValue(error.message);
@@ -136,11 +137,17 @@ export const uploadImage = createAsyncThunk(
 	}
 );
 
-export const fetchUser = createAsyncThunk('user/fetchUser', async id => {
-	const response = await axios.get(`http://localhost:3001/users/${id}`);
-
-	return response.data;
-});
+export const fetchUser = createAsyncThunk(
+	'user/fetchUser',
+	async (id, { dispatch, rejectWithValue }) => {
+		try {
+			const response = await axios.get(`http://localhost:3001/users/${id}`);
+			return response.data;
+		} catch (error) {
+			rejectWithValue(error);
+		}
+	}
+);
 const userSlice = createSlice({
 	name: 'user',
 	initialState,
@@ -198,6 +205,7 @@ const userSlice = createSlice({
 		},
 		[fetchUser.rejected]: state => {
 			state.loadStatus = 'error';
+			state.serverError = true;
 		},
 		[uploadImage.pending]: state => {
 			state.photoLoadStatus = 'loading';
