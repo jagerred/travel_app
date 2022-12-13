@@ -7,6 +7,7 @@ import filtersRoutes from './routes/filtersRoutes.js';
 import usersRoutes from './routes/usersRoutes.js';
 import cors from 'cors';
 import path from 'path';
+
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -16,7 +17,7 @@ const PORT = 3001;
 const app = express();
 
 app.use(cors());
-app.use(express.static(path.join('server', '../client/build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 app.use('/', cityRoutes);
 app.use('/filters', filtersRoutes);
 app.use('/users', usersRoutes);
