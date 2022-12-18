@@ -37,19 +37,6 @@ Object {
                 </option>
                 <option
                   class="filter-result__option"
-                  order="asc"
-                  value="rating-up"
-                >
-                  рейтингу^
-                </option>
-                <option
-                  class="filter-result__option"
-                  value="rating-down"
-                >
-                  рейтингу
-                </option>
-                <option
-                  class="filter-result__option"
                   value="likes"
                 >
                   лайкам
@@ -155,19 +142,6 @@ Object {
                 value="name"
               >
                 имени
-              </option>
-              <option
-                class="filter-result__option"
-                order="asc"
-                value="rating-up"
-              >
-                рейтингу^
-              </option>
-              <option
-                class="filter-result__option"
-                value="rating-down"
-              >
-                рейтингу
               </option>
               <option
                 class="filter-result__option"
