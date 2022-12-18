@@ -113,3 +113,15 @@ body {
 	clip: rect(0 0 0 0);
 	transition: all 1s ease;
 }
+.like {
+	fill: rgb(131, 131, 131);
+	&:hover {
+		fill: #ed7c7c;
+	}
+}
+.map-location__container {
+	height: toRem(200);
+}
+.visible {
+	transform: translateX(0);
+}

@@ -106,13 +106,6 @@ const PlaceCard = ({
 					</div>
 				</Link>
 			</li>
-			{/*<button
-				onClick={() => {
-					
-				}}
-			>
-				Удалить
-			</button>*/}
 		</>
 	);
 };

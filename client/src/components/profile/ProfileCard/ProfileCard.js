@@ -57,7 +57,6 @@ const ProfileCard = ({ item, visited }) => {
 				placeObj: item,
 			})
 		);
-
 		dispatch(
 			postPlace({
 				cityId,

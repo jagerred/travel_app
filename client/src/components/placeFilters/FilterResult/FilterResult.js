@@ -26,6 +26,7 @@ import PaginationNav from '../PaginationNav/PaginationNav';
 import setUrlRequest from 'utils/setUrlRequest';
 import declarationOfNumber from 'utils/declarationOfNumber';
 import { BsSliders } from 'react-icons/bs';
+import FiltersSelect from '../FiltersSelect/FiltersSelect';
 
 const FilterResult = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
@@ -100,11 +101,13 @@ const FilterResult = () => {
 			return <PlaceCard key={id} cityId={cityId} placeId={id} {...props} />;
 		});
 	};
+	const changeSort = e =>
+		dispatch(updateSort([e.target.value, definePlacesOrder(e)]));
 
 	const filteredPlaces = renderPlace(places);
-
 	const isLoading = loadStatus === 'loading' ? true : false;
 	const isError = loadStatus === 'error' ? true : false;
+
 	const placesCount = `${name}: найден${
 		places.length === 1 ? ' ' : 'о'
 	} ${totalPlaces} ${declarationOfNumber(places.length, [
@@ -120,35 +123,7 @@ const FilterResult = () => {
 						{placesCount}
 					</span>
 					<div className='filter-result__buttons-container'>
-						<label htmlFor='#' className='filter-result__sort'>
-							Поиск по:
-							<select
-								name='sort-by'
-								id='sort-by'
-								className='filter-result__select'
-								value={sort[0]}
-								onChange={e =>
-									dispatch(updateSort([e.target.value, definePlacesOrder(e)]))
-								}
-							>
-								<option value='name' className='filter-result__option'>
-									имени
-								</option>
-								<option
-									value='rating-up'
-									order='asc'
-									className='filter-result__option'
-								>
-									рейтингу^
-								</option>
-								<option value='rating-down' className='filter-result__option'>
-									рейтингу
-								</option>
-								<option value='likes' className='filter-result__option'>
-									лайкам
-								</option>
-							</select>
-						</label>
+						<FiltersSelect changeSort={changeSort} sort={sort[0]} />
 						<button
 							className='filter-result__button filter-result__button--filter'
 							onClick={() => dispatch(toggleMobileVisible())}
@@ -164,7 +139,6 @@ const FilterResult = () => {
 						{isLoading ? <PlaceCardSkeleton /> : filteredPlaces}
 					</ul>
 				)}
-
 				<PaginationNav />
 			</div>
 		</>

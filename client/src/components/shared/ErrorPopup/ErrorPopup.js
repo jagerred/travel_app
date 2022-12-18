@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectDarkTheme } from 'redux/selectors/globalSelectors';
 import { selectUserServerError } from 'redux/selectors/userSelectors';
-import { setErrorPopupMessage } from 'redux/slices/globalSlice';
 import { MdClose } from 'react-icons/md';
 import { BiError } from 'react-icons/bi';
 import { toggleServerError } from 'redux/slices/userSlice';

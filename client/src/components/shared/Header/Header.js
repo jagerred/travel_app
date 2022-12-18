@@ -5,7 +5,6 @@ import { useOnClickOutside } from 'hooks/use-onclick-outside';
 import { useRef, useState } from 'react';
 
 import { toggleTheme } from 'redux/slices/themeSlice';
-import { toggleBurgerMenu, toggleUserMenu } from 'redux/slices/globalSlice';
 import { toggleModalOpen } from 'redux/slices/authModalSlice';
 import { removeUser } from 'redux/slices/userSlice';
 
@@ -66,12 +65,6 @@ const Header = () => {
 								onClick={() => toggleUserMenu()}
 								tabIndex={0}
 							>
-								{' '}
-								{/*{photo === '' ? (
-									<FaUserCircle className='header__profile-icon' />
-								) : (
-									<img src={`/${photo}`} alt='' className='image' />
-								)}*/}
 								{photo !== '' ? (
 									<img src={`/${photo}`} alt='' className='image' />
 								) : null}

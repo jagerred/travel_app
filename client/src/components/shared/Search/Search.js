@@ -23,7 +23,7 @@ const Search = ({ isMain, searchPlaceholder }) => {
 	const inputRef = useRef(null);
 	const resultsRef = useRef(null);
 
-	const { cityInfo, searchResult, searchFilter, loadStatus, searchLoadStatus } =
+	const { cityInfo, searchResult, searchFilter, loadStatus } =
 		useSelector(selectSearch);
 
 	const darkTheme = useSelector(selectDarkTheme);
@@ -129,7 +129,6 @@ const Search = ({ isMain, searchPlaceholder }) => {
 						) : null}
 					</form>
 				</div>
-				{searchLoadStatus === 'error' ? <span>ВСЕ ПЛОХО</span> : null}
 			</section>
 		</>
 	);

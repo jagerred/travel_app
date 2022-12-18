@@ -12,7 +12,6 @@ import {
 import { addFilter, deleteFilter } from 'redux/slices/filtersSlice';
 import { v4 } from 'uuid';
 import SubcategoryFilter from 'components/placeFilters/SubcategoryFilter/SubcategoryFilter';
-import Map from 'components/mapGis/Map/Map';
 import { BsArrowLeftShort } from 'react-icons/bs';
 import {
 	selectDistricts,
@@ -29,7 +28,6 @@ const Filters = () => {
 	const districtsLoadStatus = useSelector(selectDistrictsLoadStatus);
 	const mobileVisible = useSelector(selectMobileVisible);
 	const districts = useSelector(selectDistricts);
-
 	const darkTheme = useSelector(selectDarkTheme);
 
 	useEffect(() => {
@@ -71,7 +69,9 @@ const Filters = () => {
 			);
 		});
 	};
+
 	const themeClass = darkTheme ? `dark-card` : '';
+
 	return (
 		<>
 			<div
@@ -95,7 +95,6 @@ const Filters = () => {
 						<ul className='list filters__list'>{renderDistricts()}</ul>
 					</div>
 				</div>
-				{/*<Map />*/}
 			</div>
 		</>
 	);
