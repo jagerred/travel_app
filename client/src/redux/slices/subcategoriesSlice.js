@@ -33,7 +33,6 @@ const subcategoriesSlice = createSlice({
 		},
 		toggleSubcategory: (state, action) => {
 			const { subcategory, category } = action.payload;
-			console.log(`sub ${subcategory} cat ${category}`);
 			const currentCategory = state.subcategories.find(
 				i => i.category === category
 			);

@@ -8,15 +8,6 @@ import UserModal from 'components/user/UserModal/UserModal';
 import ErrorPopup from 'components/shared/ErrorPopup/ErrorPopup';
 import LazyLoader from 'components/shared/LazyLoader/LazyLoader';
 import { suspenseComponent } from 'utils/suspenseComponent';
-//import MainPage from 'pages/MainPage/MainPage';
-//import CityPage from 'pages/CityPage/CityPage';
-//import SinglePlacePage from 'pages/SinglePlacePage/SinglePlacePage';
-//import ProfilePage from 'pages/ProfilePage/ProfilePage';
-//import ProfileCities from 'components/profile/ProfileCities/ProfileCities';
-//import Page404 from 'pages/Page404/Page404';
-//import ProfileCards from 'components/profile/ProfileCards/ProfileCards';
-//import SinglePlaceReviews from 'components/singlePlace/SinglePlaceReviews/SinglePlaceReviews';
-//import SinglePlaceInfo from 'components/singlePlace/SinglePlaceInfo/SinglePlaceInfo';
 
 const MainPage = lazy(() => import('pages/MainPage/MainPage'));
 const CityPage = lazy(() => import('pages/CityPage/CityPage'));

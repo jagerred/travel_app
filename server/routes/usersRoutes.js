@@ -48,7 +48,6 @@ router.post('/:userId/:cityId/places', async (req, res) => {
 
 ///---Заменить reorderPlaces
 router.patch('/:userId/:cityId/reorderPlaces', async (req, res) => {
-	console.log(req.body);
 	User.findOneAndUpdate(
 		{ uid: req.params.userId, 'cities.id': req.params.cityId },
 		{ $set: { 'cities.$.places': req.body } },
@@ -64,7 +63,6 @@ router.patch('/:userId/:cityId/reorderPlaces', async (req, res) => {
 
 ///---Заменить reorderVisited
 router.patch('/:userId/:cityId/reorderVisited', async (req, res) => {
-	console.log(req.body);
 	User.findOneAndUpdate(
 		{ uid: req.params.userId, 'cities.id': req.params.cityId },
 		{ $set: { 'cities.$.visited': req.body } },
@@ -80,7 +78,6 @@ router.patch('/:userId/:cityId/reorderVisited', async (req, res) => {
 
 ///---Добавить место в visited
 router.post('/:userId/:cityId/visited', async (req, res) => {
-	console.log(req.body);
 	User.findOneAndUpdate(
 		{ uid: req.params.userId, 'cities.id': req.params.cityId },
 		{ $push: { 'cities.$.visited': req.body } },
@@ -124,7 +121,6 @@ router.post('/:userId', async (req, res) => {
 
 ///---Удалить место
 router.delete('/:userId/:cityId/deletePlace', async (req, res) => {
-	console.log(req.body);
 	User.findOneAndUpdate(
 		{ uid: req.params.userId, 'cities.id': req.params.cityId },
 		{ $pull: { 'cities.$.places': req.body } },
@@ -141,7 +137,6 @@ router.delete('/:userId/:cityId/deletePlace', async (req, res) => {
 
 ///---Удалить место в visited
 router.delete('/:userId/:cityId/deleteVisitedPlace', async (req, res) => {
-	console.log(req.body);
 	User.findOneAndUpdate(
 		{ uid: req.params.userId, 'cities.id': req.params.cityId },
 		{ $pull: { 'cities.$.visited': req.body } },

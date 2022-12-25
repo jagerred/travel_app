@@ -21,6 +21,8 @@
 		border-radius: 20px;
 		padding: toRem(10) toRem(10);
 		min-width: toRem(50);
+		background-color: inherit;
+		border: none;
 		cursor: pointer;
 		&--active {
 			color: white;

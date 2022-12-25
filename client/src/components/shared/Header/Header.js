@@ -63,6 +63,9 @@ const Header = () => {
 							<div
 								className='header__profile-link'
 								onClick={() => toggleUserMenu()}
+								onKeyDown={e => {
+									if (e.code === 'Enter') toggleUserMenu();
+								}}
 								tabIndex={0}
 							>
 								{photo !== '' ? (

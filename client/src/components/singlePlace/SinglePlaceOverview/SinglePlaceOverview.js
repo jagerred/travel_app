@@ -17,6 +17,7 @@ import {
 import { selectUserCities } from 'redux/selectors/userSelectors';
 import { checkCurrentCity } from 'utils/placeUtils';
 import { isItemInArr } from 'utils/placeUtils';
+import { checkSubcategoryIcon } from 'utils/checkSubcategoryIcon';
 
 import { Skeleton } from '@mui/material';
 import CopyToClipboard from 'react-copy-to-clipboard';
@@ -38,6 +39,7 @@ const SinglePlaceOverview = () => {
 		category,
 		likes,
 		reviews,
+		subcategory,
 	} = useSelector(selectPlaceData);
 	const darkTheme = useSelector(selectDarkTheme);
 	const loadStatus = useSelector(selectPlaceLoadstatus);
@@ -84,13 +86,14 @@ const SinglePlaceOverview = () => {
 	});
 
 	const checkAuth = func => (isAuth ? func() : dispatch(toggleModalOpen()));
-
+	const subcategoryIcon = checkSubcategoryIcon(subcategory);
 	const themeDark = darkTheme ? 'single-place-overview__container--dark' : '';
 	const isLoading = loadStatus === 'loading';
 	return (
 		<>
 			<div className={`single-place-overview__container ${themeDark} `}>
 				<div className='single-place-overview__img'>
+					{subcategoryIcon}
 					{loadStatus === 'loading' ? (
 						<Skeleton variant='rounded' width={800} height={700} />
 					) : (

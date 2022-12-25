@@ -34,7 +34,11 @@ const ProfileMain = () => {
 				) : null}
 				<FaUserCircle className='profile-main__profile-icon' />
 
-				<button className='button profile-main__button' onClick={handleInput}>
+				<button
+					className='button profile-main__button'
+					onClick={handleInput}
+					tabIndex={0}
+				>
 					Изменить фото
 				</button>
 			</div>

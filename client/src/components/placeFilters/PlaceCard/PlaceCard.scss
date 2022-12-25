@@ -19,6 +19,9 @@
 		flex-direction: column;
 		min-height: 100%;
 		min-width: 100%;
+		&:focus-visible {
+			outline: 3px solid rgb(255, 125, 55);
+		}
 	}
 	&__img {
 		background-color: var(--color-gray);
@@ -54,11 +57,38 @@
 		margin-left: toRem(15);
 	}
 	&__icon {
+		position: absolute;
+		top: 3%;
+		left: 3%;
+		width: 26px;
+		height: 26px;
+		padding: 4px;
+		border-radius: 50%;
+
+		&--food {
+			background-color: orange;
+		}
+		&--architect {
+			background-color: rgb(136, 50, 175);
+		}
+		&--attract {
+			background-color: rgb(205, 57, 129);
+		}
+		&--culture {
+			background-color: var(--primary-color);
+		}
+		&--parks {
+			background-color: rgb(42, 160, 42);
+		}
 		&--geo {
 			position: absolute;
 			left: toRem(-17);
 			top: 0;
 		}
+	}
+	&__icon-container {
+		width: 30px;
+		height: 30px;
 	}
 	&__stats {
 		display: flex;

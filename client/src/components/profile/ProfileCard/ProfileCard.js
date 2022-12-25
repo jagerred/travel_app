@@ -9,7 +9,7 @@ import { deletePlace, postPlace } from 'redux/slices/userSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { selectDarkTheme } from 'redux/selectors/globalSelectors';
-
+import { checkSubcategoryIcon } from 'utils/checkSubcategoryIcon';
 const ProfileCard = ({ item, visited }) => {
 	const dispatch = useDispatch();
 	const { cityId } = useParams();
@@ -90,7 +90,7 @@ const ProfileCard = ({ item, visited }) => {
 	};
 
 	let drag = false;
-
+	const subcategoryIcon = checkSubcategoryIcon(item.subcategory);
 	return (
 		<>
 			<Reorder.Item
@@ -118,6 +118,7 @@ const ProfileCard = ({ item, visited }) => {
 					}}
 				/>
 				<div className='profile-cards__img'>
+					{subcategoryIcon}
 					<img src={item.photos} alt={item.name} className='image' />
 				</div>
 				<div className='profile-cards__text'>

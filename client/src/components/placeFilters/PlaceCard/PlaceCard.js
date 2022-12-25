@@ -11,6 +11,7 @@ import { checkCurrentCity, isItemInArr } from 'utils/placeUtils';
 import useHandlePlace from 'hooks/useHandlePlace';
 import { selectUserCities } from 'redux/selectors/userSelectors';
 import { selectDarkTheme } from 'redux/selectors/globalSelectors';
+import { checkSubcategoryIcon } from 'utils/checkSubcategoryIcon';
 
 const PlaceCard = ({
 	placeId,
@@ -21,6 +22,7 @@ const PlaceCard = ({
 	district,
 	category,
 	rating,
+	subcategory,
 }) => {
 	const cities = useSelector(selectUserCities);
 	const darkTheme = useSelector(selectDarkTheme);
@@ -41,6 +43,7 @@ const PlaceCard = ({
 		district,
 		category,
 		rating,
+		subcategory,
 	};
 	const { handlePlace, erasePlace } = useHandlePlace({
 		cities,
@@ -49,10 +52,11 @@ const PlaceCard = ({
 		currentCity,
 		likes,
 	});
-
+	const subcategoryIcon = checkSubcategoryIcon(subcategory);
 	return (
 		<>
 			<li className={`place-card__item ${darkTheme ? 'dark-card' : ''}`}>
+				{subcategoryIcon}
 				<button
 					className='button button--like place-card__like-button'
 					onClick={

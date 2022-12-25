@@ -12,8 +12,6 @@ import {
 } from 'redux/slices/placeCategoriesSlice';
 
 import { v4 } from 'uuid';
-import { MdFastfood, MdTheaterComedy, MdPark } from 'react-icons/md';
-import { GiSaintBasilCathedral, GiMedievalGate } from 'react-icons/gi'; //достопр
 import PlaceCategoriesSkeleton from './PlaceCategoriesSkeleton';
 import {
 	addFilter,
@@ -21,7 +19,7 @@ import {
 	deleteFilter,
 } from 'redux/slices/filtersSlice';
 import { selectPlaceCategoties } from 'redux/selectors/placeSelectors';
-
+import { chooseCategoryIcon } from 'utils/chooseCategoryIcon';
 const PlaceCategories = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const dispatch = useDispatch();
@@ -46,23 +44,6 @@ const PlaceCategories = () => {
 		}
 	}, [loadStatus]);
 
-	const chooseIcon = category => {
-		switch (category) {
-			case 'f00':
-				return <MdFastfood className='place-categories__icon' />;
-			case 'c00':
-				return <MdTheaterComedy className='place-categories__icon' />;
-			case 'p00':
-				return <MdPark className='place-categories__icon' />;
-			case 'd00':
-				return <GiSaintBasilCathedral className='place-categories__icon' />;
-			case 'a00':
-				return <GiMedievalGate className='place-categories__icon' />;
-			default:
-				return;
-		}
-	};
-
 	const addActive = category => {
 		dispatch(fetchSubcategories(category));
 		dispatch(addFilter({ type: 'category', filter: category }));
@@ -76,20 +57,22 @@ const PlaceCategories = () => {
 		return categories.map(item => {
 			const activeClass = item.isActive ? 'place-categories__item--active' : '';
 			return (
-				<li
-					key={v4()}
-					className={`place-categories__item ${activeClass}`}
-					onClick={() => {
-						if (activeClass === '') {
-							addActive(item.category);
-						} else {
-							removeActive(item.category);
-						}
-						dispatch(toggleCategory(item.category));
-					}}
-				>
-					{chooseIcon(item.category)}
-					<span className='place-categories__name'>{item.name}</span>
+				<li key={v4()}>
+					<button
+						className={`place-categories__item ${activeClass}`}
+						tabIndex='0'
+						onClick={() => {
+							if (activeClass === '') {
+								addActive(item.category);
+							} else {
+								removeActive(item.category);
+							}
+							dispatch(toggleCategory(item.category));
+						}}
+					>
+						{chooseCategoryIcon(item.category)}
+						<span className='place-categories__name'>{item.name}</span>
+					</button>
 				</li>
 			);
 		});

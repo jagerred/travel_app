@@ -4,7 +4,7 @@ import declarationOfNumber from 'utils/declarationOfNumber';
 const CityCard = ({ id, name, photos, places }) => {
 	return (
 		<li className='cities__item'>
-			<Link to={`/${id}/places`} className='link cities__link'>
+			<Link to={`/${id}/places`} className='link cities__link' tabIndex={0}>
 				{/*<button className='button button--like cities__button'>
 					<HiHeart className='cities__icon' />
 				</button>*/}

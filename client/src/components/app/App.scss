@@ -37,7 +37,7 @@ body {
 		opacity: 0.8;
 	}
 	&:focus-visible {
-		outline: 3px solid red;
+		outline: 3px solid rgb(255, 125, 55);
 	}
 	&:disabled {
 		background-color: var(--color-darkgray);
@@ -82,7 +82,7 @@ body {
 	text-decoration: none;
 	color: inherit;
 	&:focus-visible {
-		outline: 3px solid red;
+		outline: 3px solid rgb(255, 125, 55);
 	}
 }
 
